@@ -1,0 +1,108 @@
+﻿Build1=Default,b4a.example
+File1=breakOut.db3
+File10=usuarios.db3
+File11=usuarios2.db3
+File12=x.png
+File2=card.png
+File3=card2.png
+File4=cloud.png
+File5=Layout.bal
+File6=play.png
+File7=play2.png
+File8=registrarse.bal
+File9=Retro Game Atari Breakout Blog Thumbnail.png
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=core
+Library2=xui
+Library3=sql
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=crearUsuario
+Module2=funciones
+Module3=Starter
+NumberOfFiles=12
+NumberOfLibraries=3
+NumberOfModules=3
+Version=13
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Atari BreakOut
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: landscape 
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private btnInicar As Button
+	Private btnRegistrarse As Button
+
+	Private txtUsuario As EditText
+	Private txtContraseña As EditText
+	Private btnGuardar As Button
+	Private btnCancelar As Button
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	' Verifica si es la primera vez que se ejecuta la aplicación
+	If File.Exists(File.DirInternal,"breakOut.db3") = False Then
+		File.Copy(File.DirAssets,"breakOut.db3",File.DirInternal,"breakOut.db3")
+	End If
+
+	
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub Button1_Click
+	xui.MsgboxAsync("Hello world!", "B4X")
+End Sub
+
+Private Sub btnInicar_Click
+	
+End Sub
+
+Private Sub btnRegistrarse_Click
+	StartActivity(crearUsuario)
+End Sub
+
+Private Sub btnGuardar_Click
+	
+
+	
+End Sub
+
+Private Sub btnCancelar_Click
+	
+End Sub
